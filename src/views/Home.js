@@ -51,13 +51,27 @@ const Home = () => {
                         </button>
                     </div>
                     <div className="col-md-12 py-3">
-                        <ul className="list-group">
+                        <h3>Listado de Tareas:</h3>
+                        <ul className="list-group my-4">
                             {
                                 !!store.tasks &&
                                 store.tasks.map((task, index) => {
                                     return (
                                         <li key={index} className='list-group-item'>
                                             {task}
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>
+                        <h3>Listado de Usuarios:</h3>
+                        <ul className="list-group my-4">
+                            {
+                                !!store.users &&
+                                store.users.map((user, index) => {
+                                    return (
+                                        <li key={index} className='list-group-item'>
+                                            {user.name}
                                         </li>
                                     )
                                 })

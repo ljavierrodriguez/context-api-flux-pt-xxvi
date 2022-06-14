@@ -6,11 +6,17 @@ const getState = ({ getStore, getActions, setStore }) => {
             tasks: [
                 'Make the bed',
                 'Buy a coffee'
-            ]
+            ],
+            users: null,
         },
         actions: {
             saludo: () => {
                 console.log('Hola');
+            },
+            getUsers: () => {
+                fetch('https://jsonplaceholder.typicode.com/users')
+                    .then((response) => response.json())
+                    .then((data) => setStore({ users: data }))
             }
         }
     }

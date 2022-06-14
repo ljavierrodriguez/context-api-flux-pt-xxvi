@@ -16,6 +16,7 @@ const injectContext = PassedComponent => {
 
         useEffect(() => {
             // state.actions.saludo();
+            state.actions.getUsers();
         }, [])
 
         return (
